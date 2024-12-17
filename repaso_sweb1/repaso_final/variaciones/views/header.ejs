@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+  <header>
+    <h1>Tienda Sonny Angels</h1>
+    <nav>
+      <ul>
+        <% if (userRole === 'admin') { %>
+          <li><a href="/admin">Administrador</a></li>
+        <% } %>
+        <% if (user) { %>
+          <li><a href="/restricted">Inicio</a></li>
+          <li><a href="/productos">Productos</a></li>
+          <li><a href="/carrito">Carrito</a></li>
+          <li><a href="/foro">Foro</a></li>
+          <li><a href="/perfil">Perfil</a></li>
+          <li><a href="/logout">Cerrar sesión</a></li>
+        <% } else { %>
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/productos">Productos</a></li>
+          <li><a href="/carrito">Carrito</a></li>
+          <li><a href="/login">Login</a></li>
+          <li><a href="/registro">Registro</a></li>
+        <% } %>
+      </ul>
+      </nav>
+  </header>
+<main>

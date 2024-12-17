@@ -1,0 +1,54 @@
+<%- include("header") %>
+
+<h2>Administración de Productos</h2>
+
+<% if (message) { %>
+  <div class="success"><%= message %></div>
+<% } %>
+<% if (error) { %>
+  <div class="error"><%= error %></div>
+<% } %>
+
+<h3>Usuarios existentes</h3>
+  <div class="user-list">
+    <% users.forEach(user => { %>
+      <div class="user-item">
+        <span><strong>Usuario:</strong> <%= user.username %> | <strong>Email:</strong> <%= user.email || 'N/A' %> | <strong>Rol:</strong> <%= user.role %></span>
+        <form method="post" action="/admin/remove-user">
+          <input type="hidden" name="username" value="<%= user.username %>">
+          <button type="submit" class="delete-button">Eliminar</button>
+        </form>
+      </div>
+    <% }) %>
+  </div>
+
+
+<h3>Productos existentes</h3>
+  <div class="product-list">
+    <% products.forEach(product => { %>
+      <div class="product-item">
+        <span><strong><%= product.name %></strong> - <%= product.price %>€</span>
+        <form method="post" action="/admin/remove-product">
+          <input type="hidden" name="productId" value="<%= product.id %>">
+          <button type="submit" class="delete-button">Eliminar</button>
+        </form>
+      </div>
+    <% }) %>
+  </div>
+
+<h3>Añadir Producto</h3>
+  <form method="post" action="/admin/add-product">
+    <label for="name">Nombre del Producto:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="price">Precio:</label>
+    <input type="number" step="0.01" id="price" name="price" required>
+
+    <label for="image">URL de la imagen:</label>
+    <input type="text" id="image" name="image">
+
+    <button type="submit">Añadir Producto</button>
+  </form>
+
+<%- include("footer") %>
+

@@ -1,0 +1,52 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+#form-chat {
+  background: lightgray;
+  padding: 5px;
+  position: fixed;
+  display: flex;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+}
+
+#input {
+  flex-grow: 1;
+}
+
+#messages {
+  list-style-type: none;
+}
+
+/* Estilo para mensajes enviados por otros usuarios */
+.other-user-message {
+  background: lightblue;
+  border-radius: 5px;
+  margin: 5px 0;
+  padding: 10px;
+}
+
+/* Estilo para mensajes enviados por el usuario actual */
+.current-user-message {
+  background: lightgreen;
+  border-radius: 5px;
+  margin: 5px 0;
+  padding: 10px;
+}
+
+#forum-messages {
+  list-style-type: none;
+}
+
+
+#private-messages {
+  list-style-type: none;
+}

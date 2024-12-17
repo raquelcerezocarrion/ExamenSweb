@@ -1,0 +1,19 @@
+<%- include("header") %>
+
+<h2>Nuestros Productos</h2>
+<div class="productos">
+  <% products.forEach(product => { %>
+    <div class="producto">
+      <img src="<%= product.image %>" alt="<%= product.name %>">
+      <h3><%= product.name %></h3>
+      <p><%= product.description %></p>
+      <p>Precio: <%= product.price %>€</p>
+      <form method="post" action="/carrito/add">
+        <input type="hidden" name="productId" value="<%= product.id %>">
+        <button type="submit">Añadir al carrito</button>
+      </form>
+    </div>
+  <% }) %>
+</div>
+
+<%- include("footer") %>

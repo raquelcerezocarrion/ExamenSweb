@@ -1,0 +1,13 @@
+<div class="product-list">
+    <% products.forEach(product => { %>
+      <div class="product">
+        <a href="/product/<%= product.id %>">
+          <img src="<%= product.image %>" alt="<%= product.name %>">
+          <h3><%= product.name %></h3>
+          <p><%= product.description %></p>
+          <span class="price">$<%= product.price.toFixed(2) %></span>
+        </a>
+      </div>
+    <% }) %>
+  </div>
+  

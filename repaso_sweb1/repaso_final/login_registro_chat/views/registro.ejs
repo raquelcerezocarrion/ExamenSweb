@@ -1,0 +1,30 @@
+<%- include("header", {}) %>
+<h1>Registro</h1>
+<form method="post" action="/registro">
+    <label>Usuario:</label>
+    <input type="text" name="username" required><br>
+    <label>Contraseña:</label>
+    <input type="password" name="password" id="password" required><br>
+    <label>Repita la Contraseña:</label>
+    <input type="password" name="confirmPassword" id="confirmPassword" required><br>
+    <button type="submit" id="submitBtn">Registrar</button>
+</form>
+
+<!-- El script de a continuación se puede poner en un archvivo aparte en public/javascripts/registro.js e incluirlo como recurso: <script src="/javascripts/registro.js"></script> . En este caso se ha optado por incluirlo en la vista. -->
+
+<script>
+    const password = document.getElementById("password");
+    const confirmPassword = document.getElementById("confirmPassword");
+    const submitBtn = document.getElementById("submitBtn");
+
+    submitBtn.addEventListener("click", function (e) {
+        if (password.value.length < 8) {
+            alert("La contraseña debe tener al menos 8 caracteres.");
+            e.preventDefault();
+        } else if (password.value !== confirmPassword.value) {
+            alert("Las contraseñas no coinciden.");
+            e.preventDefault();
+        }
+    });
+</script>
+<%- include("footer", {}) %>

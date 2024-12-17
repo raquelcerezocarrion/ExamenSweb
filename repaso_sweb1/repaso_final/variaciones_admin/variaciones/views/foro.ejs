@@ -1,0 +1,17 @@
+<%- include("header", {}) %>
+    <h1>Foro</h1>
+
+<div id="chat">
+    <div id="chat-container" data-username="<%= user %>">
+        <ul id="messages"></ul>
+        <form id="form-chat">
+            <input id="input" type="text" placeholder="Escribe tu mensaje">
+            <button>Send</button>
+        </form>
+    </div>
+</div>
+<script src="/socket.io/socket.io.js" defer></script>
+<script src="/javascripts/foro.js"defer ></script>
+
+<%- include("footer", {}) %>
+

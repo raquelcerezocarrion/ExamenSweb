@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <header class="cabecera">
+      <h1>Tienda</h1>
+      <strong>Bienvenido a la tienda</strong>
+    </header>
+
+    <button id="toggle-menu" class="toggle-menu">☰</button>
+
+    <nav id="menu-lateral" class="menu-lateral">
+      <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Productos</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <h1>Contenido</h1>
+      <h2>Aquí encontrarás los productos más relevantes</h2>
+      <img src="images/kiko.jpg" alt="Kiko" width="500" height="300">
+      <div class="contenido">
+        <div class="productos">
+          <h3>Pintalabios</h3>
+            <ol>
+              <li>Rojo</li>
+              <li>Rosa</li>
+              <li>Verde</li>
+            </ol>
+        </div>
+        <div class="tabla-tonos">
+          <table>
+            <tr>
+              <th>Color</th>
+              <th>Tono</th>
+            </tr>
+            <tr>
+              <td>Rojo</td>
+              <td>46</td>
+            </tr>
+            <tr>
+              <td>Rosa</td>
+              <td>31</td>
+            </tr>
+            <tr>
+              <td>Verde</td>
+              <td>3</td>
+            </tr>
+          </table>          
+        </div>
+      </div>
+      <a href="https://www.kikocosmetics.com/es-es/">Nuestro proveedor de productos</a>
+      <section>
+        <h2>Contacto</h2>
+        <form action="/submit" method="POST">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required><br><br>
+          <label for="comentario">Comentarios:</label><br><br>
+          <textarea id="comentario" name="comentario" rows="4" cols="20" required></textarea><br><br>
+          <input type="submit" value="Enviar">
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <small>Derechos de autor 2024 Raquel</small>
+    </footer>
+
+    <script>
+      document.getElementById("toggle-menu").addEventListener("click", function() {
+        const menu = document.getElementById("menu-lateral");
+        menu.classList.toggle("menu-visible");
+      });
+    </script>
+  </body>
+</html>

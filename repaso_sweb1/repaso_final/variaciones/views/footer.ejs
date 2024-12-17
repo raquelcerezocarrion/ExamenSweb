@@ -1,0 +1,15 @@
+</main>
+<footer>
+  <% if (!cookiesAccepted) { %>
+    <div class="cookies" id="cookies-banner">
+        <h2>Cookies</h2>
+        <p>¿Deseas aceptar las cookies?</p>
+        <button onclick="aceptar()">Aceptar</button>
+        <button onclick="rechazar()">Rechazar</button>
+    </div>
+  <% } %>
+   <p>&copy; 2024 Tienda Express. Todos los derechos reservados.</p>
+<script src="javascripts/botonCookies.js" defer></script>
+
+</body>
+</html>

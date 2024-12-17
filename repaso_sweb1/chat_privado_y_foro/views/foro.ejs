@@ -1,0 +1,13 @@
+<%- include("header", { user: user }) %>
+<h1><%= title %></h1>
+<p>Welcome to the forum</p>
+
+<div id="chat-container" data-username="<%= user.username %>">
+    <ul id="forum-messages"></ul>
+    <form id="form-chat">
+      <input id="input" autocomplete="off">
+      <button>Send</button>
+    </form>
+  </div>
+  
+<%- include("footer", {}) %>

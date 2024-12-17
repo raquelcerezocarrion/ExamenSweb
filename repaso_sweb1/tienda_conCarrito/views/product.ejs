@@ -1,0 +1,11 @@
+<section class="product-detail">
+    <h2><%= product.name %></h2>
+    <img src="<%= product.image %>" alt="<%= product.name %>" class="product-image">
+    <p><%= product.description %></p>
+    <span class="price">$<%= product.price.toFixed(2) %></span>
+    <form action="/product/add-to-cart" method="POST">
+      <input type="hidden" name="productId" value="<%= product.id %>">
+      <button type="submit" class="add-to-cart">Añadir al carrito</button>
+    </form>
+  </section>
+  

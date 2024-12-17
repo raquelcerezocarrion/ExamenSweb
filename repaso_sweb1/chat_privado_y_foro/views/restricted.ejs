@@ -1,0 +1,9 @@
+<%- include("header", { user: user }) %>
+<h1><%= title %></h1>
+<p>Welcome to <%= title %></p>
+
+<div>
+  <a href="/foro" class="btn btn-primary">Chat del Foro</a>
+  <a href="/chat" class="btn btn-secondary">Chat Privado</a>
+</div>
+<%- include("footer", {}) %>

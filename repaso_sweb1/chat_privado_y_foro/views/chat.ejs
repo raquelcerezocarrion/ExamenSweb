@@ -1,0 +1,23 @@
+<%- include("header", { user: user }) %>
+<h1><%= title %></h1>
+<p>Welcome to private chat</p>
+
+<div id="user-search">
+    <label for="username">Buscar usuario:</label>
+    <input id="username" type="text" placeholder="Usuario">
+    <button id="start-chat">Iniciar Chat</button>
+  </div>
+  
+  <div id="chat-container" data-username="<%= user.username %>">
+    <ul id="private-messages"></ul>
+    <form id="form-chat">
+      <input id="input" autocomplete="off">
+      <button>Send</button>
+    </form>
+  </div>
+  
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/javascripts/chat.js"></script>
+
+<%- include("footer", {}) %>

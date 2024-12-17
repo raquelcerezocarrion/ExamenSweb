@@ -1,0 +1,164 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+header.cabecera {
+  margin-left: 220px;
+  text-align: center;
+  padding: 30px;
+  font-size: 50px;
+  color: #333;
+  background-color: #e0e0e0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.menu-lateral {
+  background-color: #2c3e50;
+  color: #fff;
+  width: 220px;
+  padding-top: 60px;
+  position: fixed;
+  top: 0;
+  left: -220px;
+  height: 100%;
+  transition: left 0.3s ease;
+  box-shadow: 4px 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.menu-lateral.menu-visible {
+  left: 0;
+}
+
+.toggle-menu {
+  position: fixed;
+  top: 20px;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  font-size: 24px;
+  cursor: pointer;
+  transition: left 0.3s ease;
+  z-index: 1000;
+}
+
+
+.toggle-menu:hover {
+  background-color: #2980b9;
+}
+
+.menu-lateral ul {
+  list-style: none;
+  padding: 20px;
+}
+
+.menu-lateral ul li {
+  margin-bottom: 20px;
+}
+
+.menu-lateral ul li a {
+  color: #ecf0f1;
+  font-size: 18px;
+  display: block;
+  padding: 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s, padding-left 0.3s;
+}
+
+.menu-lateral ul li a:hover {
+  background-color: #3498db;
+  padding-left: 15px;
+}
+
+main {
+  margin-left: 20px;
+  padding: 20px;
+  transition: margin-left 0.3s ease;
+}
+
+.menu-visible ~ main {
+  margin-left: 240px;
+}
+
+h3 {
+  font-size: 22px;
+  color: #333;
+  margin-top: 20px;
+}
+
+ol {
+  font-size: 18px;
+  color: #555;
+  list-style: none;
+  padding-left: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+table {
+  width: 80%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+table th, table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+table th {
+  background-color: #34495e;
+  color: #fff;
+}
+
+.contenido {
+  display: flex;
+  margin: 20px;
+}
+
+.productos {
+  flex-basis: 35%;
+}
+
+.tabla-tonos {
+  flex-basis: 65%;
+}
+
+a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+a:hover {
+  background-color: #ff3300;
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+  background-color: #333;
+  color: #fff;
+  font-size: 14px;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+}

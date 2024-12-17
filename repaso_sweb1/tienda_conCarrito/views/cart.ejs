@@ -1,0 +1,18 @@
+<section class="cart">
+    <h2>Carrito de Compras</h2>
+    <ul>
+      <% cart.forEach(product => { %>
+        <li>
+          <img src="<%= product.image %>" alt="<%= product.name %>" style="width: 50px;">
+          <strong><%= product.name %></strong> - $<%= product.price.toFixed(2) %>
+          <form action="/cart/remove" method="POST" style="display:inline;">
+            <input type="hidden" name="productId" value="<%= product.id %>">
+            <button type="submit">Eliminar</button>
+          </form>
+        </li>
+      <% }) %>
+    </ul>
+    <p>Total: $<%= totalPrice.toFixed(2) %></p>
+    <a href="/checkout" class="button">Proceder al Checkout</a>
+  </section>
+  

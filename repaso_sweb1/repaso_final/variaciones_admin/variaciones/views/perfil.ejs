@@ -1,0 +1,34 @@
+<%- include("header") %>
+<h2>Perfil</h2>
+
+<% if (message) { %>
+  <div class="success"><%= message %></div>
+<% } %>
+<% if (error) { %>
+  <div class="error"><%= error %></div>
+<% } %>
+
+<p><strong>Nombre de usuario:</strong> <%= user.username %></p>
+<p><strong>Correo electrónico:</strong> <%= user.email  %></p>
+
+<form method="post" action="/perfil/update-username">
+  <label for="newUsername">Nuevo nombre de usuario:</label>
+  <input type="text" id="newUsername" name="newUsername" value="<%= user.username %>" required>
+  <button type="submit">Actualizar nombre de usuario</button>
+</form>
+
+
+<form method="post" action="/perfil/update-email">
+  <label for="newEmail">Nuevo correo electrónico:</label>
+  <input type="text" id="newEmail" name="newEmail" value="<%= user.email || '' %>" required>
+  <button type="submit">Actualizar correo</button>
+</form>
+
+
+<form method="post" action="/perfil/update-password">
+  <label for="newPassword">Nueva contraseña:</label>
+  <input type="password" id="newPassword" name="newPassword" minlength="6" required>
+  <button type="submit">Actualizar contraseña</button>
+</form>
+
+<%- include("footer") %>
